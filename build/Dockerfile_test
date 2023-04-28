@@ -1,0 +1,11 @@
+FROM golang:1.18
+
+WORKDIR /go/src/github.com/boriszhilko/ports-service
+COPY . .
+
+RUN go mod download
+RUN go build -o ./out/ports-service ./cmd
+
+EXPOSE 8080
+
+CMD ["./out/ports-service"]
