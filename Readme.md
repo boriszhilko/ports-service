@@ -6,7 +6,7 @@ The service runs within a Docker container.
 <p/>
 Default database is a Redis database.
 <p/>
-Extension to other input sources and databases is described in the [Extending the Ports Service](#extending-the-ports-service) section.
+Extension to other input sources and databases is described in the Extending the Ports Service section.
 
 ## Installation
 
