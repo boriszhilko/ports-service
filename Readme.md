@@ -1,9 +1,9 @@
 ## Ports Service
 
-Ports Service is a microservice that populates the database with a data on seaports. 
-This service runs in a Docker container.
+The Ports Service is a microservice that follows the DDD architecture. <br>Upon launch, it populates a Redis database with information about seaports, using a JSON file as the default input source. 
+<p>
+The service runs within a Docker container.
 <p/>
-Default input source is a JSON file.
 Default database is a Redis database.
 <p/>
 Extension to other input sources and databases is described in the [Extending the Ports Service](#extending-the-ports-service) section.
