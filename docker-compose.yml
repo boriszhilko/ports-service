@@ -7,9 +7,7 @@ services:
       - "6379:6379"
 
   app:
-    build:
-      context: .
-      dockerfile: build/Dockerfile
+    image: ports-service:latest
     ports:
       - "8080:8080"
     env_file:
