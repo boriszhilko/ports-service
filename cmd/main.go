@@ -1,3 +1,11 @@
+// Package main is the entry point for the Ports Service application.
+//
+// Environment variables:
+// - REDIS_URL: Redis database URL
+// - PORTS_FILE_ADDRESS: Ports data file address in file system
+// - LOG_LEVEL: Log level (debug, info, warn, error, fatal, panic)
+//
+// Logs are output in JSON format with RFC3339Nano timestamps.
 package main
 
 import (
@@ -13,6 +21,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+// main is the entry point for the Ports Service application.
+// It reads the ports data from an input and persists it in repository.
 func main() {
 	if err := configureLogging(); err != nil {
 		log.Fatal(err)

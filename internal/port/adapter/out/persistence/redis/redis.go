@@ -1,3 +1,4 @@
+// Package redis provides a repository implementation that uses Redis as a storage backend.
 package redis
 
 import (
@@ -20,6 +21,10 @@ func NewRedisRepository(url string) *Repository {
 		})}
 }
 
+// CreateOrUpdate writes the given ports data to Redis in batches.
+// The function writes data to Redis using pipeline to improve performance.
+// The context parameter can be used to set the timeout or deadline for the operation.
+// Returns an error if any of the write operations fail.
 func (mr *Repository) CreateOrUpdate(ctx context.Context, ports []domain.Port) error {
 	err := mr.writeBatch(ctx, ports)
 	if err != nil {

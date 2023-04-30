@@ -1,3 +1,5 @@
+// Package file provides functionality
+// for getting input data from a file located in a file system.
 package file
 
 import (
@@ -20,6 +22,7 @@ func NewInput(filePath string) (*Input, error) {
 	}, nil
 }
 
+// GetData function returns an io.Reader that can be used to read the contents of the file
 func (i *Input) GetData() io.Reader {
 	return i.file
 }

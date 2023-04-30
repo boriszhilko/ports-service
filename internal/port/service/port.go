@@ -1,3 +1,6 @@
+// Package service provides a service for creating and updating port data
+// using a domain.PortRepository to persist the data. The service implements
+// the Service interface and is initialized using the NewPortService function.
 package service
 
 import (
@@ -36,6 +39,10 @@ func NewPortService(input domain.PortInput, pr domain.PortRepository) (Service, 
 	}, nil
 }
 
+// CreateOrUpdatePorts function reads and processes the input data in batches
+// using the jstream library. It merges the input with existing
+// port data in the repository, and writes the merged data using the CreateOrUpdate
+// method on the repository.
 func (p *PortService) CreateOrUpdatePorts(ctx context.Context) error {
 	batch := make([]domain.Port, 0, batchSize)
 	data := p.input.GetData()

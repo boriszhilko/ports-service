@@ -1,3 +1,4 @@
+// Package domain defines the domain models used in the Ports Service.
 package domain
 
 import (
