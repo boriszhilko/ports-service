@@ -7,7 +7,10 @@ import (
 
 func TestNewInput(t *testing.T) {
 	filePath := "test.txt"
-	os.Create(filePath)
+	_, err := os.Create(filePath)
+	if err != nil {
+		t.Fatalf("Expected no error, but got %v", err)
+	}
 	defer os.Remove(filePath)
 
 	input, err := NewInput(filePath)
