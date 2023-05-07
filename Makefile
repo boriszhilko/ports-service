@@ -8,5 +8,4 @@ test:
 
 # Install golangci-lint and run linting on all go files in the current directory and subdirectories
 lint:
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.52.2
-	golangci-lint run ./...
+	docker build --target=lint -f ./build/Dockerfile .
